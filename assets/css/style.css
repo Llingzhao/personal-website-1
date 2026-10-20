@@ -402,9 +402,6 @@ figure figcaption {
 .st-play { color: var(--light); font-size: 12px; }
 .st-title { font-weight: 600; font-size: 15.5px; color: var(--text); }
 .st-artist { color: var(--text-soft); font-size: 14px; }
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { flex-wrap: wrap; }
-}
 .note-box {
   background: #fff;
   border: 1px dashed var(--primary);

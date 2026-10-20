@@ -83,10 +83,10 @@
     });
   }
 
-  /* ---------- Music marquee (JS-driven seamless loop) ---------- */
-  var reducedMotion = window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!reducedMotion) {
+  /* ---------- Music marquee (JS-driven seamless loop) ----------
+     Note: deliberately not gated on prefers-reduced-motion — the site owner
+     explicitly asked for continuous motion on this section. */
+  (function () {
     document.querySelectorAll(".marquee-track").forEach(function (track) {
       var group = track.querySelector(".marquee-group");
       if (!group) return;
@@ -119,7 +119,7 @@
       });
       requestAnimationFrame(tick);
     });
-  }
+  })();
 
   /* ---------- Active nav highlighting (works on any page) ---------- */
   var path = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
