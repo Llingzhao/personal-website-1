@@ -26,11 +26,13 @@ so the site works when served from any path without server-side includes.
 ```
 assets/css/style.css        site styles
 assets/js/main.js            mobile menu, scroll reveal, gallery lightbox
-assets/images/              web-optimized photos (max width 1600px, JPEG q82)
+assets/*.jpg|*.png          web-optimized photos, stored flat in assets/
   me-*.jpg                  personal photos
   research-*.jpg|png        research reference illustrations
-  photo-*.jpg               photography works
-assets/files/CV_LingZhao.pdf  downloadable CV
+  photo-*.jpg               photography works (photo-sea-cap.jpg.jpg and
+                            photo-changbai-lake.jpg.jpg keep their uploaded
+                            double-extension names; pages reference them as-is)
+assets/CV_LingZhao.pdf  downloadable CV
 .nojekyll                   disables Jekyll processing on GitHub Pages
 ```
 
@@ -53,7 +55,7 @@ No absolute (`/assets/...`) or local (`C:/Users/...`) paths are used.
 - No publications, awards, ORCID, Google Scholar, or phone number were added — these were
   not provided. The Publications section says "stay tuned".
 - The CV PDF is the file Ling Zhao provided (October 2026). If it changes, replace
-  `assets/files/CV_LingZhao.pdf` with the new file (keep the same filename).
+  `assets/CV_LingZhao.pdf` with the new file (keep the same filename).
 
 ## To-do / can be improved later
 
