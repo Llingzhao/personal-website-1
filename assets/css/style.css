@@ -1,26 +1,26 @@
 /* ============================================================
    Ling Zhao — Personal Academic Website
-   Palette (from the "灰绿蓝" color card):
-     background  #EDF0ED
-     text        #3F4A47
-     primary     #7F9490
-     light       #B4C2BC
+   Palette ("烟雾紫" smoky lavender — Ling Zhao, 2026-10-19):
+     background  #FAF9FB
+     text        #343A56
+     accent      #837F9D
+     tint        #EEEBF4
    ============================================================ */
 
 :root {
-  --bg:        #EDF0ED;
-  --bg-soft:   #F4F6F4;
-  --text:      #3F4A47;
-  --text-soft: #5C6764;
-  --primary:   #7F9490;
-  --primary-d: #667F7B;
-  --light:     #B4C2BC;
-  --light-2:   #CBD6D1;
+  --bg:        #FAF9FB;
+  --bg-soft:   #F3F0F8;
+  --text:      #343A56;
+  --text-soft: #777588;
+  --primary:   #343A56;
+  --primary-d: #262B40;
+  --light:     #837F9D;
+  --light-2:   #C9C3D9;
   --card:      #FFFFFF;
-  --line:      #D5DCD8;
+  --line:      #E3E0EC;
   --radius:    14px;
-  --shadow:    0 10px 30px rgba(63, 74, 71, .08);
-  --shadow-sm: 0 4px 14px rgba(63, 74, 71, .07);
+  --shadow:    0 10px 30px rgba(52, 58, 86, .08);
+  --shadow-sm: 0 4px 14px rgba(52, 58, 86, .07);
   --serif: Georgia, "Times New Roman", "Songti SC", "STSong", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
            "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
@@ -58,11 +58,11 @@ h1, h2, h3, h4 {
 .site-header {
   position: sticky; top: 0; z-index: 50;
   background: #FFFFFF;
-  box-shadow: 0 2px 18px rgba(63, 74, 71, .09);
+  box-shadow: 0 2px 18px rgba(52, 58, 86, .09);
   border-bottom: 1px solid var(--line);
   transition: box-shadow .25s;
 }
-.site-header.scrolled { box-shadow: 0 8px 28px rgba(63, 74, 71, .16); }
+.site-header.scrolled { box-shadow: 0 8px 28px rgba(52, 58, 86, .16); }
 
 .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 16px; }
 
@@ -120,9 +120,9 @@ h1, h2, h3, h4 {
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(105deg,
-    rgba(47, 61, 58, .78) 0%,
-    rgba(47, 61, 58, .55) 45%,
-    rgba(47, 61, 58, .15) 100%);
+    rgba(38, 43, 64, .88) 0%,
+    rgba(52, 58, 86, .72) 45%,
+    rgba(131, 127, 157, .30) 100%);
 }
 .hero-inner { position: relative; z-index: 1; padding: 54px 24px; max-width: 1060px; margin: 0 auto; width: 100%; }
 .hero-kicker {
@@ -133,8 +133,8 @@ h1, h2, h3, h4 {
   padding: 7px 16px; border-radius: 999px; margin-bottom: 26px;
 }
 .hero h1 { font-size: clamp(40px, 5.5vw, 66px); color: #fff; margin-bottom: 14px; letter-spacing: .5px; }
-.hero .hero-sub { font-size: clamp(18px, 2.6vw, 23px); color: #E7ECEA; max-width: 640px; margin-bottom: 12px; }
-.hero .hero-line { font-size: 16px; color: #D2DBD8; max-width: 620px; margin-bottom: 34px; }
+.hero .hero-sub { font-size: clamp(18px, 2.6vw, 23px); color: #ECEBF4; max-width: 640px; margin-bottom: 12px; }
+.hero .hero-line { font-size: 16px; color: #D6D2E4; max-width: 620px; margin-bottom: 34px; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
 .btn {
@@ -158,7 +158,7 @@ h1, h2, h3, h4 {
   padding: 64px 0 44px;
   border-bottom: 1px solid var(--line);
   text-align: center;
-  background: linear-gradient(180deg, #E2E8E3 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #EAE6F4 0%, var(--bg) 100%);
 }
 .page-hero .kicker {
   font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
@@ -170,7 +170,7 @@ h1, h2, h3, h4 {
 
 /* ---------------- Sections ---------------- */
 .section { padding: 52px 0; }
-.section.alt { background: #DEE5DE; }
+.section.alt { background: #EFEBF5; }
 .section-title {
   font-size: clamp(26px, 3.6vw, 34px);
   margin-bottom: 10px;
@@ -304,7 +304,7 @@ figure figcaption {
 .g-cap {
   position: absolute; left: 0; right: 0; bottom: 0;
   padding: 26px 16px 12px;
-  background: linear-gradient(180deg, transparent, rgba(47,61,58,.75));
+  background: linear-gradient(180deg, transparent, rgba(38,43,64,.78));
   color: #fff; font-size: 14px; opacity: 0; transition: opacity .25s;
 }
 .g-item:hover .g-cap { opacity: 1; }
@@ -313,13 +313,13 @@ figure figcaption {
 .lightbox {
   display: none;
   position: fixed; inset: 0; z-index: 100;
-  background: rgba(47, 61, 58, .92);
+  background: rgba(38, 43, 64, .94);
   align-items: center; justify-content: center;
   padding: 40px;
 }
 .lightbox.open { display: flex; }
 .lightbox img { max-width: min(1100px, 92vw); max-height: 84vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
-.lightbox .lb-cap { position: absolute; bottom: 28px; color: #E7ECEA; font-size: 15px; }
+.lightbox .lb-cap { position: absolute; bottom: 28px; color: #ECEBF4; font-size: 15px; }
 .lightbox .lb-close {
   position: absolute; top: 22px; right: 28px;
   background: none; border: none; color: #fff;
@@ -376,20 +376,17 @@ figure figcaption {
 .marquee {
   overflow: hidden;
   padding: 8px 0 12px;
+  display: flex; flex-direction: column; gap: 12px;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
 }
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 42s linear infinite;
+  will-change: transform;
 }
-.marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-group {
   display: flex; gap: 14px; padding-right: 14px;
-}
-@keyframes marquee-scroll {
-  to { transform: translateX(-50%); }
 }
 .song-tag {
   display: inline-flex; align-items: center; gap: 9px;
@@ -402,11 +399,11 @@ figure figcaption {
   transition: border-color .18s, transform .18s;
 }
 .song-tag:hover { border-color: var(--primary); transform: translateY(-2px); text-decoration: none; }
-.st-play { color: var(--primary-d); font-size: 12px; }
+.st-play { color: var(--light); font-size: 12px; }
 .st-title { font-weight: 600; font-size: 15.5px; color: var(--text); }
 .st-artist { color: var(--text-soft); font-size: 14px; }
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; flex-wrap: wrap; }
+  .marquee-track { flex-wrap: wrap; }
 }
 .note-box {
   background: #fff;

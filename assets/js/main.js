@@ -83,6 +83,44 @@
     });
   }
 
+  /* ---------- Music marquee (JS-driven seamless loop) ---------- */
+  var reducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reducedMotion) {
+    document.querySelectorAll(".marquee-track").forEach(function (track) {
+      var group = track.querySelector(".marquee-group");
+      if (!group) return;
+      var dir = track.getAttribute("data-dir") === "right" ? 1 : -1;
+      var half = group.getBoundingClientRect().width;
+      var x = dir === 1 ? -half : 0;
+      var paused = false;
+      var marquee = track.closest(".marquee");
+      if (marquee) {
+        marquee.addEventListener("mouseenter", function () { paused = true; });
+        marquee.addEventListener("mouseleave", function () { paused = false; });
+      }
+      var last = performance.now();
+      var SPEED = 45; // px per second
+      function tick(now) {
+        var dt = (now - last) / 1000;
+        last = now;
+        if (half > 0) {
+          if (!paused) {
+            x += dir * SPEED * dt;
+            if (dir === -1 && -x >= half) x += half;
+            if (dir === 1 && x >= 0) x -= half;
+            track.style.transform = "translateX(" + x + "px)";
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+      window.addEventListener("resize", function () {
+        half = group.getBoundingClientRect().width;
+      });
+      requestAnimationFrame(tick);
+    });
+  }
+
   /* ---------- Active nav highlighting (works on any page) ---------- */
   var path = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
   document.querySelectorAll(".nav-links a").forEach(function (a) {
