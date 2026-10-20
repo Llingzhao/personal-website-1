@@ -33,6 +33,7 @@ assets/*.jpg|*.png          web-optimized photos, stored flat in assets/
                             photo-changbai-lake.jpg.jpg keep their uploaded
                             double-extension names; pages reference them as-is)
 assets/CV_LingZhao.pdf  downloadable CV
+assets/hero-npc-ring.jpg    home hero background: human NPC cryo-EM rendering
 .nojekyll                   disables Jekyll processing on GitHub Pages
 ```
 
