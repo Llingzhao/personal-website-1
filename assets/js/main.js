@@ -4,6 +4,16 @@
 (function () {
   "use strict";
 
+  /* ---------- Header shadow on scroll ---------- */
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   /* ---------- Mobile menu ---------- */
   var toggle = document.querySelector(".menu-toggle");
   var links  = document.querySelector(".nav-links");
