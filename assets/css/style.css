@@ -137,10 +137,6 @@ h1, h2, h3, h4 {
 .hero .hero-sub { font-size: clamp(18px, 2.6vw, 23px); color: #E7ECEA; max-width: 640px; margin-bottom: 12px; }
 .hero .hero-line { font-size: 16px; color: #D2DBD8; max-width: 620px; margin-bottom: 34px; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-.hero-note {
-  margin-top: 30px; font-size: 13px; color: #B9C4C1;
-  letter-spacing: .4px; max-width: 520px;
-}
 
 .btn {
   display: inline-block;
@@ -292,7 +288,7 @@ figure figcaption {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
+  gap: 20px;
 }
 .g-item {
   position: relative;
